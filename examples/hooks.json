@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "matcher": "Bash|apply_patch|Edit|Write|mcp__.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 ~/.codex/hooks/codex_attention_notify.py",
+            "timeout": 10,
+            "statusMessage": "Sending Codex attention notification"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 ~/.codex/hooks/codex_attention_notify.py",
+            "timeout": 10,
+            "statusMessage": "Checking whether the command needs user attention"
+          }
+        ]
+      }
+    ]
+  }
+}
+
