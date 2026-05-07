@@ -77,15 +77,6 @@ def ensure_hooks_json():
     )
     hooks["PermissionRequest"] = permission_entries
 
-    pre_tool_entries = remove_managed_entries(hooks.get("PreToolUse", []))
-    pre_tool_entries.append(
-        {
-            "matcher": "Bash",
-            "hooks": [hook_entry()],
-        }
-    )
-    hooks["PreToolUse"] = pre_tool_entries
-
     HOOKS_JSON.parent.mkdir(parents=True, exist_ok=True)
     with HOOKS_JSON.open("w", encoding="utf-8") as handle:
         json.dump(data, handle, ensure_ascii=False, indent=2)

@@ -11,18 +11,6 @@
           }
         ]
       }
-    ],
-    "PreToolUse": [
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/usr/bin/python3 ~/.codex/hooks/codex_attention_notify.py",
-            "timeout": 10
-          }
-        ]
-      }
     ]
   }
 }
