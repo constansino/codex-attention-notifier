@@ -7,8 +7,7 @@
           {
             "type": "command",
             "command": "/usr/bin/python3 ~/.codex/hooks/codex_attention_notify.py",
-            "timeout": 10,
-            "statusMessage": "Sending Codex attention notification"
+            "timeout": 10
           }
         ]
       }
@@ -20,12 +19,10 @@
           {
             "type": "command",
             "command": "/usr/bin/python3 ~/.codex/hooks/codex_attention_notify.py",
-            "timeout": 10,
-            "statusMessage": "Checking whether the command needs user attention"
+            "timeout": 10
           }
         ]
       }
     ]
   }
 }
-

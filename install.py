@@ -34,12 +34,11 @@ def ensure_hook_script():
     HOOK_DEST.chmod(0o755)
 
 
-def hook_entry(status_message):
+def hook_entry():
     return {
         "type": "command",
         "command": MANAGED_COMMAND,
         "timeout": 10,
-        "statusMessage": status_message,
     }
 
 
@@ -73,7 +72,7 @@ def ensure_hooks_json():
     permission_entries.append(
         {
             "matcher": "Bash|apply_patch|Edit|Write|mcp__.*",
-            "hooks": [hook_entry("Sending Codex attention notification")],
+            "hooks": [hook_entry()],
         }
     )
     hooks["PermissionRequest"] = permission_entries
@@ -82,7 +81,7 @@ def ensure_hooks_json():
     pre_tool_entries.append(
         {
             "matcher": "Bash",
-            "hooks": [hook_entry("Checking whether the command needs user attention")],
+            "hooks": [hook_entry()],
         }
     )
     hooks["PreToolUse"] = pre_tool_entries
@@ -146,4 +145,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
